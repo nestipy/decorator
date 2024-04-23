@@ -4,6 +4,8 @@ from typing import Type, Callable, Union
 from nestipy_ioc import NestipyContainer, ModuleProviderDict
 from nestipy_metadata import ModuleMetadata, Reflect, RouteKey
 
+from .method import Route, Get, Post, Patch, Put, Delete
+
 
 class Scope(enum.Enum):
     Request = 'Request'
@@ -75,3 +77,16 @@ class Module:
         Reflect.set_metadata(cls, ModuleMetadata.Module, True)
         self.container.add_singleton(cls)
         return cls
+
+
+__all__ = [
+    "Module",
+    "Controller",
+    "Injectable",
+    "Route",
+    "Get",
+    "Post",
+    "Put",
+    "Patch",
+    "Delete"
+]
